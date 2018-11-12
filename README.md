@@ -70,7 +70,8 @@ namespace MyApp
             //WPA Example
             WifiConfiguration config = new WifiConfiguration();
             config.Ssid = "MyAccessPoint";
-            config.AllowKeyManagement.Set((int)KeyManagementType.WpaPsk);
+            //config.AllowKeyManagement.Set((int)KeyManagementType.WpaPsk);
+            config.AllowKeyManagement.Set(4);//加密类型需要使用WPA2_PSK
             config.PreSharedKey = "Password";
 
             bool result = wifiApManager.SetWifiApEnabled(config, true);
